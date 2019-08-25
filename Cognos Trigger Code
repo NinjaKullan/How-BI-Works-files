@@ -1,0 +1,7 @@
+rem Copy the below code into a notepad and save it as “.bat” file
+
+rem  trigger file code below 
+
+cd "D:\Program Files\ibm\cognos\analytics\webapps\utilities\trigger"
+
+trigger.bat http://<REPLACE_WITH_DISPATCHER_NAME>:9300/p2pd/servlet/dispatch  <USERID>  <PASSWORD> "MLMActiveDirectory"  <TRIGGERNAME1,TRIGGERNAME2>
