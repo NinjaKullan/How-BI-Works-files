@@ -1,0 +1,26 @@
+@echo off
+SETLOCAL
+
+set /a err_cd=0
+
+D:
+cd "D:\Program Files (x86)\ibm\cognos\c11\bin"
+REM "D:\Program Files (x86)\ibm\cognos\c11\bin\cogtr.exe" -n2 -c -g -p"E:\Sourcecodes\Powerplay_Models\SalesModel.pyj"
+    "D:\Program Files (x86)\ibm\cognos\c11\bin\cogtr.exe" -n2 -c -g -p"E:\Sourcecodes\Powerplay_Models\SalesModel.pyj"
+
+if errorlevel 1 (
+   set /a err_cd+=1
+)                                      
+GOTO End1
+
+:End1
+
+echo "Error Code=%err_cd%"
+pause
+
+if %err_cd% gtr 0 (
+      exit %err_cd%
+)
+echo "Cube Refresh was Successfully"
+
+pause
