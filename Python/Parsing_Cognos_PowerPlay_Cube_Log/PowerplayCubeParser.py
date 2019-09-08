@@ -84,5 +84,3 @@ for lineinCommentFile in readCommentFile:
             #print(commentFileLine)
             break
 
-# The send mail function is called here.
-#sendEmailWithAttachment('john.doe@acme.com','replace_with_location_where_the_file_will_stored\findings_filename.txt')
