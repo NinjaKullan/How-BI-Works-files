@@ -85,4 +85,4 @@ for lineinCommentFile in readCommentFile:
             break
 
 # The send mail function is called here.
-#sendEmailWithAttachment('hema.suryaprakasam@martinmarietta.com','C:\Projects\Python\Personal\CubeBuildSummaryLog.txt')
+#sendEmailWithAttachment('john.doe@acme.com','replace_with_location_where_the_file_will_stored\findings_filename.txt')
