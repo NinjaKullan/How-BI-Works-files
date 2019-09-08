@@ -21,6 +21,6 @@ pause
 if %err_cd% gtr 0 (
       exit %err_cd%
 )
-echo "Cube Refresh was Successfully"
+echo "Cube Refresh was Successful"
 
 pause
