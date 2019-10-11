@@ -1,0 +1,324 @@
+<report xmlns="http://developer.cognos.com/schemas/report/15.2/" expressionLocale="en-us" useStyleVersion="11.5">
+	<!--RSU-SPC-0093 The report specification was upgraded from "http://developer.cognos.com/schemas/report/13.2/" to "http://developer.cognos.com/schemas/report/15.2/" at 2019-8-23. 14:49:26-->
+	<drillBehavior/>
+	<layouts>
+		<layout>
+			<reportPages>
+				<page name="Page1">
+					<style>
+						<defaultStyles>
+							<defaultStyle refStyle="pg"/>
+						</defaultStyles>
+						<CSS value="font-family:Consolas;font-size:12pt"/>
+					</style>
+					<pageBody>
+						<style>
+							<defaultStyles>
+								<defaultStyle refStyle="pb"/>
+							</defaultStyles>
+						</style>
+						<contents>
+							<HTMLItem description="Print Stylesheet">
+								<dataSource>
+									<staticValue>&lt;STYLE media="print"&gt;
+#idViewer,
+#idWorkareaPane,
+#idWorkarea_Pane
+{
+	height: auto !important;
+}
+HTML,
+BODY,
+#idWorkarea_Pane
+{
+	overflow: visible !important;
+}
+#idWorkarea_Pane
+{
+	top: 0 !important;
+}
+#idWorkareaPane
+{
+	border-bottom-width: 0 !important;
+}
+DIV.clsAppPane
+{
+	border-top-width: 0 !important;
+}
+DIV[HAL_paneId="PinnedOnDemandToolbarPane"],
+DIV.clsModelessDlgWin.clsModelessDlgNotPopup
+{
+	display: none !important;
+}
+[v_soutlineselected="true"]
+{
+	outline: none !important;
+	outline: unset !important;
+}
+[ v_srsspecselection="true"],
+[v_srsdataselection="true"]
+{
+	background-color: transparent !important;
+	background-color: unset !important;
+}
+&lt;/STYLE&gt;
+</staticValue>
+								</dataSource>
+							</HTMLItem>
+							<HTMLItem description="Print Button">
+								<dataSource>
+									<staticValue>&lt;STYLE media="print"&gt;
+.zzzPrintButton
+{
+	display: none !important;
+}
+&lt;/STYLE&gt;
+&lt;STYLE&gt;
+.zzzPrintButton 
+{
+	border: none;
+	background-color: transparent;
+	fill: #595859;
+	cursor: pointer;
+}
+.zzzPrintButton:hover
+{
+	fill: #1F57A4;
+}
+&lt;/STYLE&gt;
+&lt;BUTTON onclick="window.print()" class="zzzPrintButton" title="Print"&gt;
+	&lt;svg  viewBox="0 0 32 32" style="height:32px; width:32px;"&gt;
+		&lt;path d="M26 6V1H6v5H2v12h4v5l8 8h12V18h4V6h-4zM8 3h16v3H8V3zm7 26v-7H8v-8h16v15h-9z"/&gt;
+	&lt;/svg&gt;
+&lt;/BUTTON&gt;
+</staticValue>
+								</dataSource>
+							</HTMLItem>
+							<list horizontalPagination="true" name="List1" refQuery="Query1" rowsPerPage="99999">
+								<style>
+									<CSS value="border-collapse:collapse"/>
+									<defaultStyles>
+										<defaultStyle refStyle="ls"/>
+									</defaultStyles>
+								</style>
+								<listColumns>
+									<listColumn>
+										<listColumnTitle>
+											<style>
+												<defaultStyles>
+													<defaultStyle refStyle="lt"/>
+												</defaultStyles>
+											</style>
+											<contents>
+												<textItem>
+													<dataSource>
+														<dataItemLabel refDataItem="Order method type"/>
+													</dataSource>
+												</textItem>
+											</contents>
+										</listColumnTitle>
+										<listColumnBody>
+											<style>
+												<defaultStyles>
+													<defaultStyle refStyle="lc"/>
+												</defaultStyles>
+											</style>
+											<contents>
+												<textItem>
+													<dataSource>
+														<dataItemValue refDataItem="Order method type"/>
+													</dataSource>
+												</textItem>
+											</contents>
+											<listColumnRowSpan refDataItem="Order method type"/>
+										</listColumnBody>
+									</listColumn>
+									<listColumn>
+										<listColumnTitle>
+											<style>
+												<defaultStyles>
+													<defaultStyle refStyle="lt"/>
+												</defaultStyles>
+											</style>
+											<contents>
+												<textItem>
+													<dataSource>
+														<dataItemLabel refDataItem="Product line"/>
+													</dataSource>
+												</textItem>
+											</contents>
+										</listColumnTitle>
+										<listColumnBody>
+											<style>
+												<defaultStyles>
+													<defaultStyle refStyle="lc"/>
+												</defaultStyles>
+											</style>
+											<contents>
+												<textItem>
+													<dataSource>
+														<dataItemValue refDataItem="Product line"/>
+													</dataSource>
+												</textItem>
+											</contents>
+											<listColumnRowSpan refDataItem="Product line"/>
+										</listColumnBody>
+									</listColumn>
+									<listColumn>
+										<listColumnTitle>
+											<style>
+												<defaultStyles>
+													<defaultStyle refStyle="lt"/>
+												</defaultStyles>
+											</style>
+											<contents>
+												<textItem>
+													<dataSource>
+														<dataItemLabel refDataItem="Product type"/>
+													</dataSource>
+												</textItem>
+											</contents>
+										</listColumnTitle>
+										<listColumnBody>
+											<style>
+												<defaultStyles>
+													<defaultStyle refStyle="lc"/>
+												</defaultStyles>
+											</style>
+											<contents>
+												<textItem>
+													<dataSource>
+														<dataItemValue refDataItem="Product type"/>
+													</dataSource>
+												</textItem>
+											</contents>
+											<listColumnRowSpan refDataItem="Product type"/>
+										</listColumnBody>
+									</listColumn>
+									<listColumn>
+										<listColumnTitle>
+											<style>
+												<defaultStyles>
+													<defaultStyle refStyle="lt"/>
+												</defaultStyles>
+											</style>
+											<contents>
+												<textItem>
+													<dataSource>
+														<dataItemLabel refDataItem="Product"/>
+													</dataSource>
+												</textItem>
+											</contents>
+										</listColumnTitle>
+										<listColumnBody>
+											<style>
+												<defaultStyles>
+													<defaultStyle refStyle="lc"/>
+												</defaultStyles>
+											</style>
+											<contents>
+												<textItem>
+													<dataSource>
+														<dataItemValue refDataItem="Product"/>
+													</dataSource>
+												</textItem>
+											</contents>
+											<listColumnRowSpan refDataItem="Product"/>
+										</listColumnBody>
+									</listColumn>
+									<listColumn>
+										<listColumnTitle>
+											<style>
+												<defaultStyles>
+													<defaultStyle refStyle="lt"/>
+												</defaultStyles>
+											</style>
+											<contents>
+												<textItem>
+													<dataSource>
+														<dataItemLabel refDataItem="Revenue"/>
+													</dataSource>
+												</textItem>
+											</contents>
+										</listColumnTitle>
+										<listColumnBody>
+											<style>
+												<defaultStyles>
+													<defaultStyle refStyle="lm"/>
+												</defaultStyles>
+											</style>
+											<contents>
+												<textItem>
+													<dataSource>
+														<dataItemValue refDataItem="Revenue"/>
+													</dataSource>
+												</textItem>
+											</contents>
+										</listColumnBody>
+									</listColumn>
+								</listColumns>
+								<listGroups>
+									<listGroup refDataItem="Order method type"/>
+									<listGroup refDataItem="Product line"/>
+									<listGroup refDataItem="Product type"/>
+									<listGroup refDataItem="Product"/>
+								</listGroups>
+							</list>
+						</contents>
+					</pageBody>
+				</page>
+			</reportPages>
+		</layout>
+	</layouts>
+	<XMLAttributes>
+		<XMLAttribute name="RS_CreateExtendedDataItems" output="no" value="true"/>
+		<XMLAttribute output="no" name="listSeparator" value=","/>
+		<XMLAttribute output="no" name="decimalSeparator" value="."/>
+		<XMLAttribute name="RS_modelModificationTime" value="2010-06-14T20:07:25.203Z" output="no"/>
+	</XMLAttributes>
+	<queries>
+		<query name="Query1">
+			<source>
+				<model/>
+			</source>
+			<selection>
+				<dataItem aggregate="none" rollupAggregate="none" name="Product line">
+					<expression>[Sales (query)].[Products].[Product line]</expression>
+					<XMLAttributes>
+						<XMLAttribute output="no" name="RS_dataType" value="3"/>
+						<XMLAttribute output="no" name="RS_dataUsage" value="0"/>
+					</XMLAttributes>
+				</dataItem>
+				<dataItem aggregate="none" rollupAggregate="none" name="Product type">
+					<expression>[Sales (query)].[Products].[Product type]</expression>
+					<XMLAttributes>
+						<XMLAttribute output="no" name="RS_dataType" value="3"/>
+						<XMLAttribute output="no" name="RS_dataUsage" value="0"/>
+					</XMLAttributes>
+				</dataItem>
+				<dataItem aggregate="none" rollupAggregate="none" name="Product">
+					<expression>[Sales (query)].[Products].[Product]</expression>
+					<XMLAttributes>
+						<XMLAttribute output="no" name="RS_dataType" value="3"/>
+						<XMLAttribute output="no" name="RS_dataUsage" value="0"/>
+					</XMLAttributes>
+				</dataItem>
+				<dataItem aggregate="none" rollupAggregate="none" name="Order method type">
+					<expression>[Sales (query)].[Order method].[Order method type]</expression>
+					<XMLAttributes>
+						<XMLAttribute output="no" name="RS_dataType" value="3"/>
+						<XMLAttribute output="no" name="RS_dataUsage" value="0"/>
+					</XMLAttributes>
+				</dataItem>
+				<dataItem aggregate="total" name="Revenue">
+					<expression>[Sales (query)].[Sales].[Revenue]</expression>
+					<XMLAttributes>
+						<XMLAttribute output="no" name="RS_dataType" value="2"/>
+						<XMLAttribute output="no" name="RS_dataUsage" value="2"/>
+					</XMLAttributes>
+				</dataItem>
+			</selection>
+		</query>
+	</queries>
+	<modelPath>/content/package[@name='GO Sales (query)']/model[@name='model']</modelPath>
+</report>
